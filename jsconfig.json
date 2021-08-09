@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@helpers/*": ["src/helpers/*"],
+      "@redux/*": ["src/redux/*"],
+      "@firebase/*": ["src/firebase/*"]
+    }
+  }
+}

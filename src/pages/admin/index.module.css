@@ -1,0 +1,52 @@
+.admin_home_container {
+  display: grid;
+  grid-template-rows: 60px 100vh;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1px;
+  background: rgba(3, 4, 46, 0.899);
+  grid-template-areas:
+    ' . logo . . . . . .  noti1 noti2 noti3 . '
+    ' admin admin . details details details details details details details details . ';
+}
+
+.admin_home_logo {
+  grid-area: logo;
+  background: red;
+  text-align: center;
+  border: black 1px solid;
+}
+
+.admin_home_noti1 {
+  grid-area: noti1;
+  background: yellow;
+  text-align: center;
+  border: black 1px solid;
+}
+
+.admin_home_noti2 {
+  grid-area: noti2;
+  background: blue;
+  text-align: center;
+  border: black 1px solid;
+}
+
+.admin_home_noti3 {
+  grid-area: noti3;
+  background: forestgreen;
+  text-align: center;
+  border: black 1px solid;
+}
+
+.admin_home_admin {
+  grid-area: admin;
+  background: maroon;
+  text-align: center;
+  border: black 1px solid;
+}
+
+.admin_home_details {
+  grid-area: details;
+  background: violet;
+  text-align: center;
+  border: black 1px solid;
+}

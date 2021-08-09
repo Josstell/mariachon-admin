@@ -1,0 +1,38 @@
+.footer_container {
+  display: grid;
+  grid-template-rows: 100px 300px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 1px;
+  background: rgba(3, 4, 46, 0.899);
+  grid-template-areas:
+    '. area1 area1 area1 area1 area1 area1  . '
+    '. area2 area2 area3 area3 area4 area4 .';
+}
+
+.footer_header {
+  background: yellow;
+  text-align: center;
+  grid-area: area1;
+  border: black 1px solid;
+}
+
+.footer_col1 {
+  background: red;
+  text-align: center;
+  border: black 1px solid;
+  grid-area: area2;
+}
+
+.footer_col2 {
+  background: aqua;
+  text-align: center;
+  border: black 1px solid;
+  grid-area: area3;
+}
+
+.footer_col3 {
+  grid-area: area4;
+  background: magenta;
+  text-align: center;
+  border: black 1px solid;
+}
