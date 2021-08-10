@@ -30,6 +30,7 @@
     "jwt-decode": "^3.1.2",
     "mailgun-js": "^0.22.0",
     "next": "^11.0.1",
+    "next-connect": "^0.10.2",
     "nodemailer": "^6.6.2",
     "path": "^0.12.7",
     "react": "^17.0.2",

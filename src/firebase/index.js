@@ -139,8 +139,6 @@ export const signInWithFacebook = () => {
 
         // user.imageUrl = result.additionalUserInfo.profile.picture.data.url
 
-        console.log('facebook:  ', result)
-
         resolve({ token, user })
         // ...
       })
