@@ -44,10 +44,12 @@ export const loginUser = (userData) => (dispatch) => {
     .post(`${URL_API}/api/login`, userData)
     .then((snap) => {
       setAuthorizationHeader(snap.data.token)
-      dispatch({ type: USER_LOGIN_SUCCESS })
     })
     .then(() => {
-      dispatch(getUserData())
+      return dispatch(getUserData())
+    })
+    .then(() => {
+      dispatch({ type: USER_LOGIN_SUCCESS })
     })
     .catch((err) => {
       dispatch({

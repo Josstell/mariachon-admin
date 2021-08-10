@@ -218,8 +218,6 @@ export async function getServerSideProps(context) {
   //   `${URL_API}/api/reservation/get/all?role=${context.previewData.role}&?userId=${context.previewData.userId}`
   // )
 
-  console.log('parametros', parameters)
-
   const users = await resUsers
   const resevations = await resResevations
   const mariachis = await resMariachis

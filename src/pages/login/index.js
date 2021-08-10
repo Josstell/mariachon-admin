@@ -17,12 +17,14 @@ import {
   USER_SIGNUP_GOOGLE_REQUEST,
   USER_SIGNUP_GOOGLE_SUCCESS,
 } from '@redux/users/users.types'
+import LoadingBox from '@components/LoadingBox'
 
 const login = () => {
   const router = useRouter()
   const email = useRef('')
   const password = useRef('')
   const users = useSelector((state) => state.users)
+  const { loading, loadingUser } = users
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -128,7 +130,11 @@ const login = () => {
                 />
               </div>
               <div>
-                <button className="form-button" onClick={handleSubmit}>
+                <button
+                  className="form-button"
+                  onClick={handleSubmit}
+                  disabled={loading || loadingUser}
+                >
                   Entrar
                 </button>
               </div>
@@ -176,6 +182,7 @@ const login = () => {
         <div>
           <p>¿Olvidaste tu contraseña?</p>
         </div>
+        <div>{(loading || loadingUser) && <LoadingBox />}</div>
       </div>
       <style jsx>
         {`
@@ -221,6 +228,9 @@ const login = () => {
             cursor: pointer;
             background: rgba(0, 0, 255);
             color: #fff;
+          }
+          .form-button:disabled {
+            background: rgba(0, 0, 125);
           }
           .register-or {
             display: flex;
