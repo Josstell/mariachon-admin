@@ -63,7 +63,7 @@ const Navbar = () => {
 
       <div className={styles.grid_item_search}>
         <div className={styles.subitem_location}>
-          <p>Ubicación de su evento</p>
+          <p>Ubicación de su evento - preview</p>
         </div>
         <div className={styles.subitem_date}>
           <div className={styles.vl} />
