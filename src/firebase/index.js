@@ -111,6 +111,7 @@ export const signInWithGoogle = () => {
         const email = error.email
         // The firebase.auth.AuthCredential type that was used.
         const credential = error.credential
+        console.log({ errorCode, errorMessage, email, credential })
         // ...
         reject(new Error({ errorCode, errorMessage, email, credential }))
       })
