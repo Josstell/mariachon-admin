@@ -15,7 +15,7 @@ const UserColumnDetails = (props) => {
   const dispatch = useDispatch()
   const { loadingImage, credentials, option } = props
 
-  const handlerSignup = () => {
+  const handlerSignout = () => {
     dispatch(logoutUser())
   }
 
@@ -60,7 +60,7 @@ const UserColumnDetails = (props) => {
             </div>
 
             <div className="admin-user-details">
-              <span onClick={() => handlerSignup}>Salir</span>{' '}
+              <span onClick={handlerSignout}>Salir</span>
             </div>
           </div>
         </div>

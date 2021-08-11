@@ -2,6 +2,7 @@
 
 .header_container {
   display: grid;
+  width: 100vw;
   grid-template-rows: 60px 60px;
   grid-template-columns: repeat(14, 1fr);
   grid-gap: 1px;
@@ -9,6 +10,15 @@
   grid-template-areas:
     ' . area1 . . . area2 area3 area4 area5 . . area6  area7 . '
     '. . area8 area8 area8 area8 area8 area8 area8 area8 area8 . . .';
+}
+
+@media only screen and (max-width: 480px) {
+  .header_container {
+    grid-template-areas:
+      ' . area1 . . . area2 area3 . . . . area6  area7 . '
+      ' . . . . . . . area4 area5 . . .  . . '
+      '. . area8 area8 area8 area8 area8 area8 area8 area8 area8 . . .';
+  }
 }
 
 .grid_item_logo {
@@ -75,6 +85,9 @@
   grid-area: area7;
   color: rgb(218, 215, 215);
   margin-left: 20px;
+}
+.grid_item_cliente > a {
+  color: red;
 }
 .grid_item_search {
   background: rgb(218, 215, 215);

@@ -3,10 +3,9 @@ import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
 import { LogoMariachon } from '@components/Logo'
 
-import SearchIcon from '@material-ui/icons/Search'
+// import SearchIcon from '@material-ui/icons/Search'
 import { Link } from '@material-ui/core'
 import { logoutUser } from '@redux/users/users.actions'
-import styles from './navbar.module.css'
 
 const Navbar = () => {
   const router = useRouter()
@@ -33,35 +32,36 @@ const Navbar = () => {
   }
 
   return (
-    <div className={styles.header_container}>
-      <div className={styles.grid_item_logo}>
+    <div className="header-container">
+      <div className="item item-logo">
         <Link href="/">
           <LogoMariachon width={180} height={60} color1="#fff" color2="#fff" />
         </Link>
       </div>
 
-      <div className={styles.grid_item_serenata}>
-        <button className={styles.button}>Serenatas</button>
-      </div>
-      <div className={styles.grid_item_x_hora}>
-        <button className={styles.button}>Servicio por hora</button>
-      </div>
-      <div className={styles.grid_item_premium} />
-      <div className={styles.grid_item_economico} />
-
-      <div className={styles.grid_item_mariachi}>
-        <a onClick={() => handlerSignup('client')}>registrar</a>
+      <div className="item header-services">
+        <div className=" item-serenata">
+          <button className="button">Serenatas</button>
+        </div>
+        <div className="item item-x_hora">
+          <button className="button">Servicio por hora</button>
+        </div>
       </div>
 
-      <div className={styles.grid_item_cliente}>
-        {credentials.userName ? (
-          <a onClick={handlerLogout}>{credentials.userName}</a>
-        ) : (
-          <a onClick={handlerSignin}>Login</a>
-        )}
-      </div>
+      <div className="item header-register">
+        <div className="item item-mariachi">
+          <a onClick={() => handlerSignup('client')}>registrar</a>
+        </div>
 
-      <div className={styles.grid_item_search}>
+        <div className="item item_cliente">
+          {credentials.userName ? (
+            <a onClick={handlerLogout}>{credentials.userName}</a>
+          ) : (
+            <a onClick={handlerSignin}>Login</a>
+          )}
+        </div>
+      </div>
+      {/* <div className={styles.grid_item_search}>
         <div className={styles.subitem_location}>
           <p>Ubicación de su evento - preview</p>
         </div>
@@ -73,37 +73,48 @@ const Navbar = () => {
         <div className={styles.subitem_icon}>
           <SearchIcon />
         </div>
-      </div>
+      </div> */}
+      <style jsx>{`
+        .header-container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100vw;
+          background: rgba(3, 4, 46, 0.899);
+        }
+        .button {
+          border: transparent;
+          background: transparent;
+          width: auto;
+          height: 4vh;
+          padding-left: 3vw;
+          font-weight: normal;
+          font-size: 1.5vw;
+          color: rgb(218, 215, 215);
+        }
+        .item {
+          flex-grow: 1;
+          flex-shrink: 1;
+        }
+        .item > a {
+          font-size: 1.5vw;
+          margin: 0;
+          padding: 0;
+        }
 
-      {/* <div className={styles.header_logo}>
-                <div className={styles.header_service}>
-
-                    <LogoMariachon_v4 width={285} height={87} color1={color1} color2={color2} />
-                </div>
-                <div className={styles.header_service}>
-                    <div className={styles.header_serenata}>
-                        <h4>Serenatas</h4>
-                    </div>
-                    <div className={styles.header_time}>
-                        <h4>Por hora</h4>
-                    </div>
-                    <div className={styles.header_price}>
-                        <h4>Calidad o precio</h4>
-
-                    </div>
-                </div>
-            </div>
-            <div className={styles.header_search}>
-                <div>
-                    <h2>Search</h2>
-                </div>
-                <div>
-                    <h2>Search</h2>
-                </div>
-                <div>
-                    <h2>Search</h2>
-                </div>
-            </div> */}
+        .header-services {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-around;
+        }
+        .header-register {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-around;
+        }
+      `}</style>
     </div>
   )
 }
